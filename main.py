@@ -1,37 +1,33 @@
-a = "абвгдеєжзиійїклмнопрстуфхцчшщьюяabcdefghijklmnopqrstuvwxyz0123456789"
+while True:
+    print("Write first number a=")
+    a = int(input())
 
-print("If you want to encrypt text enter 1. If you want to decipher text enter 2: ")
-choice = int(input())
+    print("Write second number b=")
+    b = int(input())
 
-if choice == 1:
-    print("Enter your words: ")
-    val = input()
-    print("What indentation do you want to make?")
-    key = int(input())
-    val_lower = val.lower()
-    vald = ""
+    print("Choose operation")
+    print("1 - to add a+b")
+    print("2 - subtract a-b")
+    print("3 - multiplication a*b")
+    print("4 - division a/b")
 
-    for letter in val_lower:
-        position = a.find(letter)
-        new_position = position + key
-        if letter in a:
-            vald = vald + a[new_position]
+    d = int(input())
+
+    if d==1:
+        print("Sum a+b=",a+b)
+    elif d==2:
+        print("Difference a-b=",a-b)
+    elif d==3:
+        print("Product a*b=",a*b)
+    elif d==4:
+        if b !=0 and a !=0:
+            print("Fraction a/b=",a/b)
         else:
-            vald = vald + letter
-    print(vald)
-elif choice == 2:
-    print("Enter your words: ")
-    val = input()
-    print("What indentation do you want to make?")
-    key = int(input())
-    val_lower = val.lower()
-    vald = ""
+            print("You can't divide by 0")
 
-    for letter in val_lower:
-        position = a.find(letter)
-        new_position = position - key
-        if letter in a:
-            vald = vald + a[new_position]
-        else:
-            vald = vald + letter
-    print(vald)
+    s=(input("Do you want to do next operation?(Y/N): "))
+    if s=="Y":
+        print()
+
+    if s=="N":
+        break
